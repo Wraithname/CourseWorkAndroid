@@ -114,24 +114,15 @@ public class MainActivity extends AppCompatActivity {
         double[][] mtx1=analis.MatrixClassDis(str);//размерность 3*4
         //Нахождение матрицы с обучением
         double[][] mtxtest=analis.TestMatrix(str);//размерность 15*4
-        //Расчет матрицы W
-        double[][]w=analis.MatrixW(mtx1,mtxtest);
-        //Расчет обратной матрицы А
-        double[][]a=analis.inversion(w,4);
-        //Расчет обратной матрицы B
-        double[][]b=analis.MatrixB(a,mtx1);
+        result.setText(analis.Analisis(str,find));
         //---------------------------------------------------------------------------
-        double[]h=analis.MatrixH(b,find);
-        if(h[0]>h[1]&&h[0]>h[2]){
-            result.setText("1");
-        }
-        else if(h[1]>h[0]&&h[1]>h[2]){
-            result.setText("2");
-        }
-        else if(h[2]>h[1]&h[2]>h[0]){
-            result.setText("3");
-        }
-        //--------------------------------------------------------------------------
         LineRaspr lineRaspr=new LineRaspr();
+        double[][] Covar1=lineRaspr.MatrixC1(mtx1,mtxtest);
+        double[][] Covar2=lineRaspr.MatrixC2(mtx1,mtxtest);
+        double[][] Covar3=lineRaspr.MatrixC3(mtx1,mtxtest);
+        double[][] sq=lineRaspr.SquereDet(mtx1,mtxtest);
+        double[][] inc1=lineRaspr.inversion(lineRaspr.MatrixC1(mtx1,mtxtest),4);
+        double[][] inc2=lineRaspr.inversion(lineRaspr.MatrixC2(mtx1,mtxtest),4);
+        double[][] inc3=lineRaspr.inversion(lineRaspr.MatrixC3(mtx1,mtxtest),4);
     }
 }

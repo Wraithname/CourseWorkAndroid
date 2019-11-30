@@ -188,4 +188,30 @@ public class Analis {
         }
         return h;
     }
+    public String Analisis(String[] str,double[] find)
+    {
+        String result="";
+        double[][] mtx1=MatrixClassDis(str);//размерность 3*4
+        //Нахождение матрицы с обучением
+        double[][] mtxtest=TestMatrix(str);//размерность 15*4
+        //Расчет матрицы W
+        double[][]w=MatrixW(mtx1,mtxtest);
+        //Расчет обратной матрицы А
+        double[][]a=inversion(w,4);
+        //Расчет обратной матрицы B
+        double[][]b=MatrixB(a,mtx1);
+        //---------------------------------------------------------------------------
+        double[]h=MatrixH(b,find);
+        if(h[0]>h[1]&&h[0]>h[2]){
+            result="1";
+        }
+        else if(h[1]>h[0]&&h[1]>h[2]){
+            result="2";
+        }
+        else if(h[2]>h[1]&h[2]>h[0]){
+            result="3";
+        }
+        //--------------------------------------------------------------------------
+        return result;
+    }
 }
