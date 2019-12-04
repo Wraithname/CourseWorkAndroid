@@ -148,4 +148,13 @@ public class LineRaspr {
                 A[i][j] = E[i][j];
         return E;
     }
+    public double[][] MatrixTranspose(double[][] a){
+        double transpose[][]=new double[a.length][a.length];
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                transpose[i][j]=a[j][i];
+            }
+        }
+        return transpose;
+    }
 }
