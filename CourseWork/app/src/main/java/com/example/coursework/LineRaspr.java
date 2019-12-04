@@ -148,6 +148,18 @@ public class LineRaspr {
                 A[i][j] = E[i][j];
         return E;
     }
+    public double[] Raspr(double[][] mtx1,double[][] mtxtest){
+        double[] result={0,0,0};
+        double[][] Covar1=MatrixC1(mtx1,mtxtest);
+        double[][] Covar2=MatrixC2(mtx1,mtxtest);
+        double[][] Covar3=MatrixC3(mtx1,mtxtest);
+        double[][] sq=SquereDet(mtx1,mtxtest);
+        double[][] inc1=inversion(MatrixC1(mtx1,mtxtest),4);
+        double[][] inc2=inversion(MatrixC2(mtx1,mtxtest),4);
+        double[][] inc3=inversion(MatrixC3(mtx1,mtxtest),4);
+        //----------------------Расчет плотности------------------------------
+        return result;
+    }
     public double[][] MatrixTranspose(double[][] a){
         double transpose[][]=new double[a.length][a.length];
         for(int i=0;i<3;i++){

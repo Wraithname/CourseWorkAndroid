@@ -117,12 +117,6 @@ public class MainActivity extends AppCompatActivity {
         result.setText(analis.Analisis(str,find));
         //---------------------------------------------------------------------------
         LineRaspr lineRaspr=new LineRaspr();
-        double[][] Covar1=lineRaspr.MatrixC1(mtx1,mtxtest);
-        double[][] Covar2=lineRaspr.MatrixC2(mtx1,mtxtest);
-        double[][] Covar3=lineRaspr.MatrixC3(mtx1,mtxtest);
-        double[][] sq=lineRaspr.SquereDet(mtx1,mtxtest);
-        double[][] inc1=lineRaspr.inversion(lineRaspr.MatrixC1(mtx1,mtxtest),4);
-        double[][] inc2=lineRaspr.inversion(lineRaspr.MatrixC2(mtx1,mtxtest),4);
-        double[][] inc3=lineRaspr.inversion(lineRaspr.MatrixC3(mtx1,mtxtest),4);
+
     }
 }
