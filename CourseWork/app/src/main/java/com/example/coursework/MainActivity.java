@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         //---------------------------------------------------------------------------
         LineRaspr lineRaspr=new LineRaspr();
         String b=lineRaspr.Raspr(mtx1,mtxtest,find);
-        if(a==b)
+        if(a.equals(b))
             result.setText(a);
     }
 }
