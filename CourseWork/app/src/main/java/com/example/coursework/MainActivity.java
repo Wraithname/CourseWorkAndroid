@@ -114,9 +114,11 @@ public class MainActivity extends AppCompatActivity {
         double[][] mtx1=analis.MatrixClassDis(str);//размерность 3*4
         //Нахождение матрицы с обучением
         double[][] mtxtest=analis.TestMatrix(str);//размерность 15*4
-        result.setText(analis.Analisis(str,find));
+        String a=analis.Analisis(str,find);
         //---------------------------------------------------------------------------
         LineRaspr lineRaspr=new LineRaspr();
-
+        String b=lineRaspr.Raspr(mtx1,mtxtest,find);
+        if(a==b)
+            result.setText(a);
     }
 }
