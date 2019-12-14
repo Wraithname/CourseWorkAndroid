@@ -167,22 +167,16 @@ public class LineRaspr {
         double stp1=step(inc1,reversFind,reversSr,0);
         double stp2=step(inc2,reversFind,reversSr,1);
         double stp3=step(inc3,reversFind,reversSr,2);
-        double res1,res2,res3,exp1,exp2,exp3,r1,r2,r3;
+        double res1,res2,res3;
         res1=new BigDecimal(1/((2*Math.PI)*(2*Math.PI))*sq[0][1]).setScale(2, RoundingMode.UP).doubleValue();
         res2=new BigDecimal(1/((2*Math.PI)*(2*Math.PI))*sq[1][1]).setScale(2, RoundingMode.UP).doubleValue();
         res3=new BigDecimal(1/((2*Math.PI)*(2*Math.PI))*sq[2][1]).setScale(2, RoundingMode.UP).doubleValue();
-        exp1=new BigDecimal(Math.pow(Math.E,stp1)).setScale(2, RoundingMode.UP).doubleValue();
-        exp2=new BigDecimal(Math.pow(Math.E,stp2)).setScale(2, RoundingMode.UP).doubleValue();
-        exp3=new BigDecimal(Math.pow(Math.E,stp3)).setScale(2, RoundingMode.UP).doubleValue();
         //-----------------Расчет плотности------------------------------------
-        r1=res1*exp1;
-        r2=res2*exp2;
-        r3=res3*exp3;
-        if(r1>r2&&r1>r3)
+        if(res1>res2&&res1>res3&&stp1<stp2&&stp1<stp3)
             result="1";
-        if(r2>r1&&r2>r3)
+        if(res2>res1&&res3>res3&&stp2<stp1&&stp2<stp3)
             result="2";
-        if(r3>r1&&r3>r2)
+        if(res3>res2&&res3>res1&&stp3<stp2&&stp3<stp1)
             result="3";
         return result;
     }
