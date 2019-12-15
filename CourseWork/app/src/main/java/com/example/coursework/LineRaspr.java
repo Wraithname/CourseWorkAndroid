@@ -5,6 +5,77 @@ import java.math.BigInteger;
 import java.math.RoundingMode;
 
 public class LineRaspr {
+    int count1=0,count2=0,count3=0;
+    public double[][] TestMatrix(String[] str){
+        String[] line;
+        double[][] mtxtest=new double[15][4];
+        for (int i = 0; i < 15; i++) {
+            line = str[i].split(" ");
+            if (Integer.parseInt(line[5]) == 1) {
+                mtxtest[i][0] = Integer.parseInt(line[1]);
+                mtxtest[i][1] = Integer.parseInt(line[2]);
+                mtxtest[i][2] = Integer.parseInt(line[3]);
+                mtxtest[i][3] = Integer.parseInt(line[4]);
+            }
+            if (Integer.parseInt(line[5]) == 2) {
+                mtxtest[i][0] = Integer.parseInt(line[1]);
+                mtxtest[i][1] = Integer.parseInt(line[2]);
+                mtxtest[i][2] = Integer.parseInt(line[3]);
+                mtxtest[i][3] = Integer.parseInt(line[4]);
+            }
+            if (Integer.parseInt(line[5]) == 3) {
+                mtxtest[i][0] = Integer.parseInt(line[1]);
+                mtxtest[i][1] = Integer.parseInt(line[2]);
+                mtxtest[i][2] = Integer.parseInt(line[3]);
+                mtxtest[i][3] = Integer.parseInt(line[4]);
+            }
+        }
+        return mtxtest;
+    }
+    public double[][] MatrixClassDis(String[] str){
+        double[][] mtx1={
+                {0,0,0,0},{0,0,0,0},{0,0,0,0}
+        };
+        String[] line;
+        for(int j=0;j<str.length;j++) {
+            line = str[j].split(" ");
+            if (Integer.parseInt(line[5]) == 1) {
+                mtx1[0][0] += Integer.parseInt(line[1]);
+                mtx1[0][1] += Integer.parseInt(line[2]);
+                mtx1[0][2] += Integer.parseInt(line[3]);
+                mtx1[0][3] += Integer.parseInt(line[4]);
+                count1++;
+            }
+            if (Integer.parseInt(line[5]) == 2) {
+                mtx1[1][0] += Integer.parseInt(line[1]);
+                mtx1[1][1] += Integer.parseInt(line[2]);
+                mtx1[1][2] += Integer.parseInt(line[3]);
+                mtx1[1][3] += Integer.parseInt(line[4]);
+                count2++;
+            }
+            if (Integer.parseInt(line[5]) == 3) {
+                mtx1[2][0] += Integer.parseInt(line[1]);
+                mtx1[2][1] += Integer.parseInt(line[2]);
+                mtx1[2][2] += Integer.parseInt(line[3]);
+                mtx1[2][3] += Integer.parseInt(line[4]);
+                count3++;
+            }
+        }
+        mtx1[0][0] = mtx1[0][0]/count1;
+        mtx1[0][1] = mtx1[0][1]/count1;
+        mtx1[0][2] = mtx1[0][2]/count1;
+        mtx1[0][3] = mtx1[0][3]/count1;
+        mtx1[1][0] = mtx1[1][0]/count2;
+        mtx1[1][1] = mtx1[1][1]/count2;
+        mtx1[1][2] = mtx1[1][2]/count2;
+        mtx1[1][3] = mtx1[1][3]/count2;
+        mtx1[2][0] = mtx1[2][0]/count3;
+        mtx1[2][1] = mtx1[2][1]/count3;
+        mtx1[2][2] = mtx1[2][2]/count3;
+        mtx1[2][3] = mtx1[2][3]/count3;
+
+        return mtx1;
+    }
     public double[][] MatrixC1(double[][] mtx1,double[][] mtxtest){
         double[][]c={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}
@@ -152,8 +223,12 @@ public class LineRaspr {
                 A[i][j] = E[i][j];
         return E;
     }
-    public String Raspr(double[][] mtx1,double[][] mtxtest,double[] find){
+    public String Raspr(String[] str,double[] find){
         String result="";
+        //Матрица средних значений классов
+        double[][] mtx1=MatrixClassDis(str);//размерность 3*4
+        //Нахождение матрицы с обучением
+        double[][] mtxtest=TestMatrix(str);//размерность 15*4
         double[][] sq=SquereDet(mtx1,mtxtest);
         double[][] inc1=inversion(MatrixC1(mtx1,mtxtest),4);
         double[][] inc2=inversion(MatrixC2(mtx1,mtxtest),4);

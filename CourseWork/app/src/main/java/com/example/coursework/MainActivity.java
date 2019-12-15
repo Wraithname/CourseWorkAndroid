@@ -78,9 +78,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG,"Файл прочитан");
         return str;
     }
-
     public void startCalculation(View view) {
-        TextView first_column= (TextView)findViewById(R.id.textView12);
         TextView second_column= (TextView)findViewById(R.id.textView9);
         TextView third_column= (TextView)findViewById(R.id.textView10);
         TextView forth_column= (TextView)findViewById(R.id.textView8);
@@ -109,16 +107,12 @@ public class MainActivity extends AppCompatActivity {
         str[13]="об14 830 350 15 886 3";
         str[14]="об15 780 350 15 886 3";
         Analis analis=new Analis();
-        //---------------------Расчет начальных данных-------------------------------
-        //Матрица средних значений классов
-        double[][] mtx1=analis.MatrixClassDis(str);//размерность 3*4
-        //Нахождение матрицы с обучением
-        double[][] mtxtest=analis.TestMatrix(str);//размерность 15*4
         String a=analis.Analisis(str,find);
-        //---------------------------------------------------------------------------
         LineRaspr lineRaspr=new LineRaspr();
-        String b=lineRaspr.Raspr(mtx1,mtxtest,find);
-        if(a.equals(b))
+        String b=lineRaspr.Raspr(str,find);
+        Regression regress=new Regression();
+        String c=regress.regre(str,find);
+        if(Integer.getInteger(a)==Integer.getInteger(b)&&Integer.getInteger(a)==Integer.getInteger(c))
             result.setText(a);
     }
 }
