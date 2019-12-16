@@ -24,8 +24,8 @@
 
     <TableLayout
         android:id="@+id/tableLayout1"
-        android:layout_width="353dp"
-        android:layout_height="192dp"
+        android:layout_width="351dp"
+        android:layout_height="237dp"
         android:layout_marginStart="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="6dp"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
         </TableRow>
 
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
         </TableRow>
 
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -129,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -138,7 +138,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -147,7 +147,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
         </TableRow>
 
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -168,7 +168,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -177,7 +177,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -186,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textSize="12sp" />
         </TableRow>
 
@@ -201,8 +201,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -211,8 +210,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -221,8 +219,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name"
+                android:inputType="number"
                 android:textSize="12sp" />
 
             <EditText
@@ -231,16 +228,15 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:inputType="textPersonName"
-                android:text="Name"
+                android:inputType="number"
                 android:textSize="12sp" />
         </TableRow>
     </TableLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="363dp"
-        android:layout_height="229dp"
+        android:layout_width="364dp"
+        android:layout_height="270dp"
         android:layout_marginTop="7dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout1">
@@ -258,8 +254,8 @@
 
         <TableLayout
             android:id="@+id/tableLayout2"
-            android:layout_width="353dp"
-            android:layout_height="192dp"
+            android:layout_width="356dp"
+            android:layout_height="233dp"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="8dp"
@@ -276,7 +272,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -285,7 +281,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -294,7 +290,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -303,7 +299,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -315,7 +311,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -324,7 +320,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -333,7 +329,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -342,7 +338,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -354,7 +350,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -363,7 +359,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -372,7 +368,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -381,7 +377,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -393,7 +389,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -402,7 +398,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -411,7 +407,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -420,13 +416,13 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="23dp"
+                android:layout_height="wrap_content"
                 android:padding="5dp">
 
                 <EditText
@@ -435,8 +431,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -445,8 +440,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -455,8 +449,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -465,16 +458,15 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
         </TableLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="364dp"
-        android:layout_height="256dp"
+        android:layout_width="360dp"
+        android:layout_height="332dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
@@ -491,8 +483,8 @@
 
         <TableLayout
             android:id="@+id/tableLayout"
-            android:layout_width="353dp"
-            android:layout_height="192dp"
+            android:layout_width="349dp"
+            android:layout_height="240dp"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="8dp"
@@ -509,7 +501,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -518,7 +510,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -527,7 +519,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -536,7 +528,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -548,7 +540,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -557,7 +549,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -566,7 +558,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -575,7 +567,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -587,7 +579,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -596,7 +588,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -605,7 +597,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -614,7 +606,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -626,7 +618,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -635,7 +627,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -644,7 +636,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -653,7 +645,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
 
@@ -668,8 +660,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -678,8 +669,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -688,8 +678,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
 
                 <EditText
@@ -698,8 +687,7 @@
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:gravity="center"
-                    android:inputType="textPersonName"
-                    android:text="Name"
+                    android:inputType="number"
                     android:textSize="12sp" />
             </TableRow>
         </TableLayout>

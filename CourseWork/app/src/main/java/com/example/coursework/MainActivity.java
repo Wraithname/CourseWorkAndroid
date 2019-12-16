@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -61,7 +62,17 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CHOOSE) {
+            if (resultCode == RESULT_OK) {
+                String result=data.getStringExtra(Learning.ANSW);
+                Toast toast = Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        }
+    }
     private String[] readFile(){
         String[] str=new String[15];
         try {
