@@ -2,6 +2,7 @@ package com.example.coursework;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
+    static final private int CHOOSE=0;
     final String LOG_TAG = "CourseLog";
     final String FILENAME = "file";
     @Override
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.action_settings:
-
+                Intent intent=new Intent(this,Learning.class);
+                startActivityForResult(intent,CHOOSE);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -90,22 +93,7 @@ public class MainActivity extends AppCompatActivity {
         find[2]=Double.parseDouble(forth_column.getText().toString());
         find[3]=Double.parseDouble(fives_column.getText().toString());
         //Запись начальных данных в файл
-        String[] str=new String[15];
-        str[0]="об1 740 570 15 919 1";
-        str[1]="об2 740 570 16 907 1";
-        str[2]="об3 740 580 15 920 1";
-        str[3]="об4 720 570 17 914 1";
-        str[4]="об5 720 570 15 918 1";
-        str[5]="об6 600 600 15 597 2";
-        str[6]="об7 600 650 25 812 2";
-        str[7]="об8 700 650 23 821 2";
-        str[8]="об9 590 650 25 827 2";
-        str[9]="об10 590 650 25 798 2";
-        str[10]="об11 790 530 15 686 3";
-        str[11]="об12 800 610 18 698 3";
-        str[12]="об13 830 610 18 701 3";
-        str[13]="об14 830 350 15 886 3";
-        str[14]="об15 780 350 15 886 3";
+        String[] str=readFile();
         Analis analis=new Analis();
         String a=analis.Analisis(str,find);
         LineRaspr lineRaspr=new LineRaspr();

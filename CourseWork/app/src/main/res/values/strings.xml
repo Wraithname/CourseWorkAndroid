@@ -2,10 +2,13 @@
     <string name="app_name">Дискриминантный анализ</string>
     <string name="btn_name">Определить класс</string>
     <string name="object_class">Класс:</string>
-    <string name="object_name">Название:</string>
     <string name="first_column">ХСЧ_марганец</string>
     <string name="second_column">ХСЧ_кремний</string>
     <string name="third_column">ХСЧ_сера</string>
     <string name="forth_column">Скорость прокатки</string>
     <string name="action_settings">Добавление объеков</string>
+    <string name="class1">Класс 1</string>
+    <string name="class2">Класс 2</string>
+    <string name="class3">Класс 3</string>
+    <string name="btn2_name">Готово</string>
 </resources>
