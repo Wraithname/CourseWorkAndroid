@@ -85,13 +85,13 @@ public class Regression {
         String result="";
         double[][]x=MatrixX(str);
         double b=x[0][0]*find[0]+x[1][0]*find[1]+x[2][0]*find[2]+x[3][0]*find[3];
-        if(b<1){
+        if(b<1.5){
             result="1";
         }
-        if(b>1&&b<2){
+        if(b>1.5&&b<2.5){
             result="2";
         }
-        if(b>2&&b<3){
+        if(b>2.5&&b<3){
             result="3";
         }
         return result;
