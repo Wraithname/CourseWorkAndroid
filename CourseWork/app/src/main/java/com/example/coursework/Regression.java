@@ -6,23 +6,23 @@ public class Regression {
         double[][] mtxtest=new double[15][4];
         for (int i = 0; i < 15; i++) {
             line = str[i].split(" ");
-            if (Integer.parseInt(line[5]) == 1) {
-                mtxtest[i][0] = Integer.parseInt(line[1]);
-                mtxtest[i][1] = Integer.parseInt(line[2]);
-                mtxtest[i][2] = Integer.parseInt(line[3]);
-                mtxtest[i][3] = Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 1) {
+                mtxtest[i][0] = Integer.parseInt(line[0]);
+                mtxtest[i][1] = Integer.parseInt(line[1]);
+                mtxtest[i][2] = Integer.parseInt(line[2]);
+                mtxtest[i][3] = Integer.parseInt(line[3]);
             }
-            if (Integer.parseInt(line[5]) == 2) {
-                mtxtest[i][0] = Integer.parseInt(line[1]);
-                mtxtest[i][1] = Integer.parseInt(line[2]);
-                mtxtest[i][2] = Integer.parseInt(line[3]);
-                mtxtest[i][3] = Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 2) {
+                mtxtest[i][0] = Integer.parseInt(line[0]);
+                mtxtest[i][1] = Integer.parseInt(line[1]);
+                mtxtest[i][2] = Integer.parseInt(line[2]);
+                mtxtest[i][3] = Integer.parseInt(line[3]);
             }
-            if (Integer.parseInt(line[5]) == 3) {
-                mtxtest[i][0] = Integer.parseInt(line[1]);
-                mtxtest[i][1] = Integer.parseInt(line[2]);
-                mtxtest[i][2] = Integer.parseInt(line[3]);
-                mtxtest[i][3] = Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 3) {
+                mtxtest[i][0] = Integer.parseInt(line[0]);
+                mtxtest[i][1] = Integer.parseInt(line[1]);
+                mtxtest[i][2] = Integer.parseInt(line[2]);
+                mtxtest[i][3] = Integer.parseInt(line[3]);
             }
         }
         return mtxtest;
@@ -32,14 +32,14 @@ public class Regression {
         double[][] mtxtest=new double[15][1];
         for (int i = 0; i < 15; i++) {
             line = str[i].split(" ");
-            if (Integer.parseInt(line[5]) == 1) {
-                mtxtest[i][0] = Integer.parseInt(line[5]);
+            if (Integer.parseInt(line[4]) == 1) {
+                mtxtest[i][0] = Integer.parseInt(line[4]);
             }
-            if (Integer.parseInt(line[5]) == 2) {
-                mtxtest[i][0] = Integer.parseInt(line[5]);
+            if (Integer.parseInt(line[4]) == 2) {
+                mtxtest[i][0] = Integer.parseInt(line[4]);
             }
-            if (Integer.parseInt(line[5]) == 3) {
-                mtxtest[i][0] = Integer.parseInt(line[5]);
+            if (Integer.parseInt(line[4]) == 3) {
+                mtxtest[i][0] = Integer.parseInt(line[4]);
             }
         }
         return mtxtest;

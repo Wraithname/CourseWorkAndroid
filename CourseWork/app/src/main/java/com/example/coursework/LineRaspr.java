@@ -11,23 +11,23 @@ public class LineRaspr {
         double[][] mtxtest=new double[15][4];
         for (int i = 0; i < 15; i++) {
             line = str[i].split(" ");
-            if (Integer.parseInt(line[5]) == 1) {
-                mtxtest[i][0] = Integer.parseInt(line[1]);
-                mtxtest[i][1] = Integer.parseInt(line[2]);
-                mtxtest[i][2] = Integer.parseInt(line[3]);
-                mtxtest[i][3] = Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 1) {
+                mtxtest[i][0] = Integer.parseInt(line[0]);
+                mtxtest[i][1] = Integer.parseInt(line[1]);
+                mtxtest[i][2] = Integer.parseInt(line[2]);
+                mtxtest[i][3] = Integer.parseInt(line[3]);
             }
-            if (Integer.parseInt(line[5]) == 2) {
-                mtxtest[i][0] = Integer.parseInt(line[1]);
-                mtxtest[i][1] = Integer.parseInt(line[2]);
-                mtxtest[i][2] = Integer.parseInt(line[3]);
-                mtxtest[i][3] = Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 2) {
+                mtxtest[i][0] = Integer.parseInt(line[0]);
+                mtxtest[i][1] = Integer.parseInt(line[1]);
+                mtxtest[i][2] = Integer.parseInt(line[2]);
+                mtxtest[i][3] = Integer.parseInt(line[3]);
             }
-            if (Integer.parseInt(line[5]) == 3) {
-                mtxtest[i][0] = Integer.parseInt(line[1]);
-                mtxtest[i][1] = Integer.parseInt(line[2]);
-                mtxtest[i][2] = Integer.parseInt(line[3]);
-                mtxtest[i][3] = Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 3) {
+                mtxtest[i][0] = Integer.parseInt(line[0]);
+                mtxtest[i][1] = Integer.parseInt(line[1]);
+                mtxtest[i][2] = Integer.parseInt(line[2]);
+                mtxtest[i][3] = Integer.parseInt(line[3]);
             }
         }
         return mtxtest;
@@ -39,25 +39,25 @@ public class LineRaspr {
         String[] line;
         for(int j=0;j<str.length;j++) {
             line = str[j].split(" ");
-            if (Integer.parseInt(line[5]) == 1) {
-                mtx1[0][0] += Integer.parseInt(line[1]);
-                mtx1[0][1] += Integer.parseInt(line[2]);
-                mtx1[0][2] += Integer.parseInt(line[3]);
-                mtx1[0][3] += Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 1) {
+                mtx1[0][0] += Integer.parseInt(line[0]);
+                mtx1[0][1] += Integer.parseInt(line[1]);
+                mtx1[0][2] += Integer.parseInt(line[2]);
+                mtx1[0][3] += Integer.parseInt(line[3]);
                 count1++;
             }
-            if (Integer.parseInt(line[5]) == 2) {
-                mtx1[1][0] += Integer.parseInt(line[1]);
-                mtx1[1][1] += Integer.parseInt(line[2]);
-                mtx1[1][2] += Integer.parseInt(line[3]);
-                mtx1[1][3] += Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 2) {
+                mtx1[1][0] += Integer.parseInt(line[0]);
+                mtx1[1][1] += Integer.parseInt(line[1]);
+                mtx1[1][2] += Integer.parseInt(line[2]);
+                mtx1[1][3] += Integer.parseInt(line[3]);
                 count2++;
             }
-            if (Integer.parseInt(line[5]) == 3) {
-                mtx1[2][0] += Integer.parseInt(line[1]);
-                mtx1[2][1] += Integer.parseInt(line[2]);
-                mtx1[2][2] += Integer.parseInt(line[3]);
-                mtx1[2][3] += Integer.parseInt(line[4]);
+            if (Integer.parseInt(line[4]) == 3) {
+                mtx1[2][0] += Integer.parseInt(line[0]);
+                mtx1[2][1] += Integer.parseInt(line[1]);
+                mtx1[2][2] += Integer.parseInt(line[2]);
+                mtx1[2][3] += Integer.parseInt(line[3]);
                 count3++;
             }
         }
