@@ -23,8 +23,6 @@ public class Learning extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
         ScrollView scrollView = new ScrollView(this);
         setContentView(R.layout.activity_learning);
     }

@@ -11,4 +11,17 @@
     <string name="class2">Класс 2</string>
     <string name="class3">Класс 3</string>
     <string name="btn2_name">Готово</string>
+    <string name="Fisher">Анализ Фишера</string>
+    <string name="Raspr">Распределение</string>
+    <string name="Regress">Регрессия</string>
+    <string name="result_Fisherh1">h1:</string>
+    <string name="result_Fisherh2">h2:</string>
+    <string name="result_Fisherh3">h3:</string>
+    <string name="step1">Степень 1:</string>
+    <string name="step2">Степень 2:</string>
+    <string name="step3">Степень 3:</string>
+    <string name="osnov1">Основание 1:</string>
+    <string name="osnov2">Основание 2:</string>
+    <string name="osnov3">Основание 3:</string>
+    <string name="b">b=</string>
 </resources>
