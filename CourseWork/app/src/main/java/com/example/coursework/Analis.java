@@ -188,9 +188,8 @@ public class Analis {
         }
         return h;
     }
-    public String Analisis(String[] str,double[] find)
+    public double[] Analisis(String[] str,double[] find)
     {
-        String result="";
         double[][] mtx1=MatrixClassDis(str);//размерность 3*4
         //Нахождение матрицы с обучением
         double[][] mtxtest=TestMatrix(str);//размерность 15*4
@@ -202,16 +201,8 @@ public class Analis {
         double[][]b=MatrixB(a,mtx1);
         //---------------------------------------------------------------------------
         double[]h=MatrixH(b,find);
-        if(h[0]>h[1]&&h[0]>h[2]){
-            result="1";
-        }
-        else if(h[1]>h[0]&&h[1]>h[2]){
-            result="2";
-        }
-        else if(h[2]>h[1]&h[2]>h[0]){
-            result="3";
-        }
+
         //--------------------------------------------------------------------------
-        return result;
+        return h;
     }
 }

@@ -81,20 +81,10 @@ public class Regression {
         x=MultiplyMatrix(inO,u);
         return x;
     }
-    public String regre(String[] str,double[] find){
-        String result="";
+    public double regre(String[] str,double[] find){
         double[][]x=MatrixX(str);
         double b=x[0][0]*find[0]+x[1][0]*find[1]+x[2][0]*find[2]+x[3][0]*find[3];
-        if(b<1.5){
-            result="1";
-        }
-        if(b>1.5&&b<2.5){
-            result="2";
-        }
-        if(b>2.5&&b<3){
-            result="3";
-        }
-        return result;
+        return b;
     }
     public double[][] inversion(double [][]A, int N)
     {

@@ -223,8 +223,8 @@ public class LineRaspr {
                 A[i][j] = E[i][j];
         return E;
     }
-    public String Raspr(String[] str,double[] find){
-        String result="";
+    public double[][] Raspr(String[] str,double[] find){
+        double[][] result=new double[3][2];
         //Матрица средних значений классов
         double[][] mtx1=MatrixClassDis(str);//размерность 3*4
         //Нахождение матрицы с обучением
@@ -247,12 +247,12 @@ public class LineRaspr {
         res2=new BigDecimal(1/((2*Math.PI)*(2*Math.PI))*sq[1][1]).setScale(2, RoundingMode.UP).doubleValue();
         res3=new BigDecimal(1/((2*Math.PI)*(2*Math.PI))*sq[2][1]).setScale(2, RoundingMode.UP).doubleValue();
         //-----------------Расчет плотности------------------------------------
-        if(res1>res2&&res1>res3&&stp1<stp2&&stp1<stp3)
-            result="1";
-        if(res2>res1&&res3>res3&&stp2<stp1&&stp2<stp3)
-            result="2";
-        if(res3>res2&&res3>res1&&stp3<stp2&&stp3<stp1)
-            result="3";
+        result[0][0]=res1;
+        result[1][0]=res2;
+        result[2][0]=res3;
+        result[0][1]=stp1;
+        result[1][1]=stp2;
+        result[2][1]=stp3;
         return result;
     }
     //----------------------Расчет степени------------------------------------
