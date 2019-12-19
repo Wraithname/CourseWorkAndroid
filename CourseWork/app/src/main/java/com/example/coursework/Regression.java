@@ -1,7 +1,11 @@
 package com.example.coursework;
 
 public class Regression {
-    public double[][] TestMatrix(String[] str){
+    /**
+     * @param str - массив строк с файла
+     * @return- матрица из массива строк для выполнения операций
+     */
+    private double[][] TestMatrix(String[] str){
         String[] line;
         double[][] mtxtest=new double[15][4];
         for (int i = 0; i < 15; i++) {
@@ -27,7 +31,12 @@ public class Regression {
         }
         return mtxtest;
     }
-    public double[][] MatrixB(String[] str){
+
+    /**
+     * @param str - массив строк с файла
+     * @return - матрица B
+     */
+    private double[][] MatrixB(String[] str){
         String[] line;
         double[][] mtxtest=new double[15][1];
         for (int i = 0; i < 15; i++) {
@@ -44,7 +53,12 @@ public class Regression {
         }
         return mtxtest;
     }
-    public double[][] MatrixO(String[] str){
+
+    /**
+     * @param str - массив строк с файла
+     * @return - матрица О
+     */
+    private double[][] MatrixO(String[] str){
         double[][] o=new double[4][4];
         double[][] a=TestMatrix(str);
         int tmp=0;
@@ -59,7 +73,12 @@ public class Regression {
         }
         return o;
     }
-    public double[][] MatrixU(String[] str){
+
+    /**
+     * @param str - массив строк с файла
+     * @return - матрица U
+     */
+    private double[][] MatrixU(String[] str){
         double[][] u=new double[4][1];
         double[][] a=TestMatrix(str);
         double[][] b=MatrixB(str);
@@ -73,7 +92,12 @@ public class Regression {
         }
         return u;
     }
-    public double[][] MatrixX(String[] str){
+
+    /**
+     * @param str - массив строк с файла
+     * @return - матрица X
+     */
+    private double[][] MatrixX(String[] str){
         double[][] x;
         double[][] o=MatrixO(str);
         double[][]u =MatrixU(str);
@@ -81,12 +105,24 @@ public class Regression {
         x=MultiplyMatrix(inO,u);
         return x;
     }
-    public double regre(String[] str,double[] find){
+
+    /**
+     * @param str - массив строк с файла
+     * @param find - матрица вводимых параметров
+     * @return - результат линейной регрессии
+     */
+    public double Regre(String[] str,double[] find){
         double[][]x=MatrixX(str);
         double b=x[0][0]*find[0]+x[1][0]*find[1]+x[2][0]*find[2]+x[3][0]*find[3];
         return b;
     }
-    public double[][] inversion(double [][]A, int N)
+
+    /**
+     * @param A - матрица для инверсирования
+     * @param N - размерность матрицы
+     * @return - инверсированная матрица
+     */
+    private double[][] inversion(double [][]A, int N)
     {
         double temp;
         double [][] E = new double [N][N];
@@ -135,7 +171,13 @@ public class Regression {
                 A[i][j] = E[i][j];
         return E;
     }
-    public double[][] MultiplyMatrix(double[][] a,double[][] b){
+
+    /**
+     * @param a - матрица 1 множитель
+     * @param b - матрица 2 множитель
+     * @return - матрица произведения a на b
+     */
+    private double[][] MultiplyMatrix(double[][] a,double[][] b){
         int m = a.length;
         int n = a[0].length;
         int k = b.length;

@@ -1,7 +1,5 @@
 package com.example.coursework;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,9 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
@@ -21,16 +16,32 @@ public class MainActivity extends AppCompatActivity {
     static final private int CHOOSE=0;
     final String LOG_TAG = "CourseLog";
     final String FILENAME = "file";
+
+    /**
+     * @param savedInstanceState - сохраненнные данные для отрисовки
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
+    /**
+     *
+     * @param menu - интерфейс меню
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menuactivity, menu);
         return true;
     }
+
+    /**
+     *
+     * @param item - элементы меню
+     * @return - возвращает true - если элемент был выбран
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -43,6 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    /**
+     *
+     * @param requestCode - код ответа с выбранного интерфейса
+     * @param resultCode - код результата с выбранного интерфейса
+     * @param data - данные с выбранного интерфейса
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -54,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     *
+     * @return - возвращает массим строк с параметрами классов
+     */
     private String[] readFile(){
         String[] str=new String[15];
         try {
@@ -73,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
         Log.d(LOG_TAG,"Файл прочитан");
         return str;
     }
+
+    /**
+     * @param view - интерфейс пользователя
+     */
     public void startCalculation(View view) {
         TextView second_column= (TextView)findViewById(R.id.textView9);
         TextView third_column= (TextView)findViewById(R.id.textView10);
@@ -128,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
         result233.setText(String.valueOf(k[2][1]));
         Regression regress=new Regression();
         String j="";
-        double c=regress.regre(str,find);
+        double c=regress.Regre(str,find);
         result3.setText(String.valueOf(c));
         if(c<1.5){
             j="1";

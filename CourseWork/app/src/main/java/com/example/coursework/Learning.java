@@ -20,12 +20,20 @@ public class Learning extends AppCompatActivity {
     final String FILENAME = "file";
     final String LOG_TAG = "CourseLog";
     public final static String ANSW = "com.example.coursework.ANSW";
+
+    /**
+     * @param savedInstanceState - сохраненнные данные для отрисовки
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ScrollView scrollView = new ScrollView(this);
         setContentView(R.layout.activity_learning);
     }
+
+    /**
+     * @param testnumbers - массив строк для записи в файл
+     */
     void writeFile(String[] testnumbers) {
         try {
             // отрываем поток для записи
@@ -43,7 +51,10 @@ public class Learning extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-    //-------------------Нет привязки---------------------------------
+
+    /**
+     * @param view - интерфейс пользователя
+     */
     public void onClick(View view) {
         boolean flag1=true,flag2=true,flag3=true;
         TextView txt1=(TextView)findViewById(R.id.editText11);

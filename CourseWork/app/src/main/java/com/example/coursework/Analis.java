@@ -2,7 +2,12 @@ package com.example.coursework;
 
 public class Analis {
     int count1=0,count2=0,count3=0;
-    public double[][] TestMatrix(String[] str){
+
+    /**
+     * @param str - массив строк с файла
+     * @return - матрица из массива строк для выполнения операций
+     */
+    private double[][] TestMatrix(String[] str){
         String[] line;
         double[][] mtxtest=new double[15][4];
         for (int i = 0; i < 15; i++) {
@@ -28,7 +33,12 @@ public class Analis {
         }
         return mtxtest;
     }
-    public double[][] MatrixClassDis(String[] str){
+
+    /**
+     * @param str - массив строк из файла
+     * @return - массив средних значений для каждого класса
+     */
+    private double[][] MatrixClassDis(String[] str){
         double[][] mtx1={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -72,7 +82,13 @@ public class Analis {
 
         return mtx1;
     }
-    public double[][] MatrixB(double[][]a,double[][] mtx1){
+
+    /**
+     * @param a - инверсированная матрица W
+     * @param mtx1 - матрица средних значений классов
+     * @return - матрица B
+     */
+    private double[][] MatrixB(double[][]a,double[][] mtx1){
         double[][]b={
                 {0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}
         };
@@ -95,7 +111,13 @@ public class Analis {
         }
         return b;
     }
-    public double[][] MatrixW(double[][] mtx1,double[][] mtxtest){
+
+    /**
+     * @param mtx1 - матрица средних значений классов
+     * @param mtxtest - матрица из массива строк для выполнения операций
+     * @return - матрица W
+     */
+    private double[][] MatrixW(double[][] mtx1,double[][] mtxtest){
         double[][]w={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -127,7 +149,13 @@ public class Analis {
         }
         return w;
     }
-    public double[][] inversion(double [][]A, int N)
+
+    /**
+     * @param A - матрица для инверсирования
+     * @param N - размерность матрицы
+     * @return - инверсированная матрица
+     */
+    private double[][] inversion(double [][]A, int N)
     {
         double temp;
         double [][] E = new double [N][N];
@@ -176,7 +204,13 @@ public class Analis {
                 A[i][j] = E[i][j];
             return E;
     }
-    public double[] MatrixH(double[][]b,double[] find){
+
+    /**
+     * @param b - матрица B
+     * @param find - матрица вводимых параметров
+     * @return - матрица H
+     */
+    private double[] MatrixH(double[][]b,double[] find){
         double[]h={0,0,0};
         double temp=0;
         for (int k = 0; k < 3; k++) {
@@ -188,6 +222,12 @@ public class Analis {
         }
         return h;
     }
+
+    /**
+     * @param str - массив строк с файла
+     * @param find - матрица вводимых параметров
+     * @return - результат анализа Фишера
+     */
     public double[] Analisis(String[] str,double[] find)
     {
         double[][] mtx1=MatrixClassDis(str);//размерность 3*4
@@ -201,7 +241,6 @@ public class Analis {
         double[][]b=MatrixB(a,mtx1);
         //---------------------------------------------------------------------------
         double[]h=MatrixH(b,find);
-
         //--------------------------------------------------------------------------
         return h;
     }
