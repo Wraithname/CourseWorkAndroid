@@ -3,6 +3,9 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class LineRaspr {
+    /**
+     * Счетчики для расчета средних значений по классам
+     */
     int count1=0,count2=0,count3=0;
 
     /**

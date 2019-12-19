@@ -13,8 +13,18 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * код ответа
+     */
     static final private int CHOOSE=0;
+    /**
+     * Тэг логов
+     */
     final String LOG_TAG = "CourseLog";
+    /**
+     * Название файла
+     */
     final String FILENAME = "file";
 
     /**

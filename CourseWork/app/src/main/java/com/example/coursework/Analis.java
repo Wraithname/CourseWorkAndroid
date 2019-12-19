@@ -1,6 +1,9 @@
 package com.example.coursework;
 
 public class Analis {
+    /**
+     * Счетчики для расчета средних значений по классам
+     */
     int count1=0,count2=0,count3=0;
 
     /**

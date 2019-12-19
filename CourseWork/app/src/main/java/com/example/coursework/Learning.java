@@ -17,8 +17,17 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 public class Learning extends AppCompatActivity {
+    /**
+     * Название файла
+     */
     final String FILENAME = "file";
+    /**
+     * Тэг логов
+     */
     final String LOG_TAG = "CourseLog";
+    /**
+     * Переменная для ответа в другую активность
+     */
     public final static String ANSW = "com.example.coursework.ANSW";
 
     /**
