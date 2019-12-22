@@ -121,10 +121,10 @@ public class MainActivity extends AppCompatActivity {
             find[1] = Double.parseDouble(third_column.getText().toString());
             find[2] = Double.parseDouble(forth_column.getText().toString());
             find[3] = Double.parseDouble(fives_column.getText().toString());
-            TextView result11 = (TextView) findViewById(R.id.textView20);
+            TextView result11 = (TextView) findViewById(R.id.textView16);
             TextView result12 = (TextView) findViewById(R.id.textView17);
             TextView result13 = (TextView) findViewById(R.id.textView18);
-            TextView result21 = (TextView) findViewById(R.id.textView16);
+            TextView result21 = (TextView) findViewById(R.id.textView20);
             TextView result22 = (TextView) findViewById(R.id.textView25);
             TextView result23 = (TextView) findViewById(R.id.textView29);
             TextView result211 = (TextView) findViewById(R.id.textView22);
@@ -158,17 +158,17 @@ public class MainActivity extends AppCompatActivity {
             result211.setText(String.valueOf(k[0][1]));
             result222.setText(String.valueOf(k[1][1]));
             result233.setText(String.valueOf(k[2][1]));
-            if (k[0][0] > k[1][0] && k[0][0] > k[2][0] && k[0][1] < k[1][1] && k[0][1] < k[2][1]) {
+            if ((k[0][0] < k[1][0] && k[0][0] < k[2][0]) || (k[0][1] > k[1][1] && k[0][1] > k[2][1])) {
                 b = "1";
                 result21.setTextColor(this.getResources().getColor(R.color.colorRed));
                 result211.setTextColor(this.getResources().getColor(R.color.colorRed));
             }
-            if (k[1][0] > k[0][0] && k[1][0] > k[2][0] && k[1][1] < k[0][1] && k[1][1] < k[2][1]) {
+            if ((k[1][0] < k[0][0] && k[1][0] < k[2][0]) || (k[1][1] > k[0][1] && k[1][1] > k[2][1])) {
                 b = "2";
                 result22.setTextColor(this.getResources().getColor(R.color.colorRed));
                 result222.setTextColor(this.getResources().getColor(R.color.colorRed));
             }
-            if (k[2][0] > k[1][0] && k[2][0] > k[0][0] && k[2][1] < k[1][1] && k[2][1] < k[0][1]) {
+            if ((k[2][0] < k[1][0] && k[2][0] < k[0][0]) || (k[2][1] > k[1][1] && k[2][1] > k[0][1])) {
                 b = "3";
                 result23.setTextColor(this.getResources().getColor(R.color.colorRed));
                 result233.setTextColor(this.getResources().getColor(R.color.colorRed));
@@ -181,17 +181,17 @@ public class MainActivity extends AppCompatActivity {
             res+=String.valueOf(r);
             if (c ==1) {
                 j = "1";
-                res+=" 1 Класс";
+                res+=" (1 Класс)";
                 result3.setText(res);
             }
             if (c == 2) {
                 j = "2";
-                res+=" 2 Класс";
+                res+=" (2 Класс)";
                 result3.setText(res);
             }
             if (c == 3) {
                 j = "3";
-                res+=" 3 Класс";
+                res+=" (3 Класс)";
                 result3.setText(res);
             }
             if (Integer.getInteger(a) == Integer.getInteger(b) && Integer.getInteger(a) == Integer.getInteger(j))

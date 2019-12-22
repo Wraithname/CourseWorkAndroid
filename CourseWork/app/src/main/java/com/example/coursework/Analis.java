@@ -4,13 +4,13 @@ public class Analis {
     /**
      * Счетчики для расчета средних значений по классам
      */
-    int count1=0,count2=0,count3=0;
+    static int count1=0,count2=0,count3=0;
 
     /**
      * @param str - массив строк с файла
      * @return - матрица из массива строк для выполнения операций
      */
-    private double[][] TestMatrix(String[] str){
+    public static double[][] TestMatrix(String[] str){
         String[] line;
         double[][] mtxtest=new double[15][4];
         for (int i = 0; i < 15; i++) {
@@ -41,7 +41,7 @@ public class Analis {
      * @param str - массив строк из файла
      * @return - массив средних значений для каждого класса
      */
-    private double[][] MatrixClassDis(String[] str){
+    public static double[][] MatrixClassDis(String[] str){
         double[][] mtx1={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -91,7 +91,7 @@ public class Analis {
      * @param mtx1 - матрица средних значений классов
      * @return - матрица B
      */
-    private double[][] MatrixB(double[][]a,double[][] mtx1){
+    public static double[][] MatrixB(double[][]a,double[][] mtx1){
         double[][]b={
                 {0,0,0,0,0},{0,0,0,0,0},{0,0,0,0,0}
         };
@@ -120,7 +120,7 @@ public class Analis {
      * @param mtxtest - матрица из массива строк для выполнения операций
      * @return - матрица W
      */
-    private double[][] MatrixW(double[][] mtx1,double[][] mtxtest){
+    public static double[][] MatrixW(double[][] mtx1,double[][] mtxtest){
         double[][]w={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -158,7 +158,7 @@ public class Analis {
      * @param N - размерность матрицы
      * @return - инверсированная матрица
      */
-    private double[][] inversion(double [][]A, int N)
+    public static double[][] inversion(double [][]A, int N)
     {
         double temp;
         double [][] E = new double [N][N];
@@ -213,7 +213,7 @@ public class Analis {
      * @param find - матрица вводимых параметров
      * @return - матрица H
      */
-    private double[] MatrixH(double[][]b,double[] find){
+    public static double[] MatrixH(double[][]b,double[] find){
         double[]h={0,0,0};
         double temp=0;
         for (int k = 0; k < 3; k++) {
@@ -231,7 +231,7 @@ public class Analis {
      * @param find - матрица вводимых параметров
      * @return - результат анализа Фишера
      */
-    public double[] Analisis(String[] str,double[] find)
+    public static double[] Analisis(String[] str,double[] find)
     {
         double[][] mtx1=MatrixClassDis(str);//размерность 3*4
         //Нахождение матрицы с обучением

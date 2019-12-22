@@ -6,13 +6,13 @@ public class LineRaspr {
     /**
      * Счетчики для расчета средних значений по классам
      */
-    int count1=0,count2=0,count3=0;
+    static int count1=0,count2=0,count3=0;
 
     /**
      * @param str - массив строк с файла
      * @return - матрица из массива строк для выполнения операций
      */
-    private double[][] TestMatrix(String[] str){
+    public static double[][] TestMatrix(String[] str){
         String[] line;
         double[][] mtxtest=new double[15][4];
         for (int i = 0; i < 15; i++) {
@@ -43,7 +43,7 @@ public class LineRaspr {
      * @param str - массив строк с файла
      * @return - массив средних значений для каждого класса
      */
-    private double[][] MatrixClassDis(String[] str){
+    public static double[][] MatrixClassDis(String[] str){
         double[][] mtx1={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -93,7 +93,7 @@ public class LineRaspr {
      * @param mtxtest - матрица из массива строк для выполнения операций
      * @return - ковариационная матрица С1
      */
-    private double[][] MatrixC1(double[][] mtx1,double[][] mtxtest){
+    public static double[][] MatrixC1(double[][] mtx1,double[][] mtxtest){
         double[][]c={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -112,7 +112,7 @@ public class LineRaspr {
      * @param mtxtest - матрица из массива строк для выполнения операций
      * @return - ковариационная матрица С2
      */
-    private double[][] MatrixC2(double[][] mtx1,double[][] mtxtest){
+    public static double[][] MatrixC2(double[][] mtx1,double[][] mtxtest){
         double[][]c={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -131,7 +131,7 @@ public class LineRaspr {
      * @param mtxtest - матрица из массива строк для выполнения операций
      * @return - ковариационная матрица С3
      */
-    private double[][] MatrixC3(double[][] mtx1,double[][] mtxtest){
+    public static double[][] MatrixC3(double[][] mtx1,double[][] mtxtest){
         double[][]c={
                 {0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}
         };
@@ -149,7 +149,7 @@ public class LineRaspr {
      * @param C - матрица для расчета определителя
      * @return - детерминант матрицы
      */
-    private double Determine(double[][]C)
+    public static double Determine(double[][]C)
     {
         double[][]Covar=C;
         double EPS=1E-9;
@@ -201,7 +201,7 @@ public class LineRaspr {
      * @param mtxtest - матрица из массива строк для выполнения операций
      * @return - матрица с детерминантами и их квадратным корнем
      */
-    private double[][]SquereDet(double[][] mtx1,double[][] mtxtest){
+    public static double[][]SquereDet(double[][] mtx1,double[][] mtxtest){
         double[][] c1=MatrixC1(mtx1,mtxtest);
         double[][] c2=MatrixC2(mtx1,mtxtest);
         double[][] c3=MatrixC3(mtx1,mtxtest);
@@ -220,7 +220,7 @@ public class LineRaspr {
      * @param N - размерность матрицы
      * @return - инверсированная матрица
      */
-    private double[][] inversion(double [][]A, int N)
+    public static double[][] inversion(double [][]A, int N)
     {
         double temp;
         double [][] E = new double [N][N];
@@ -275,7 +275,7 @@ public class LineRaspr {
      * @param find - матрица вводимых параметров
      * @return - матрица результатов плотности нормального распределения
      */
-    public double[][] Raspr(String[] str,double[] find){
+    public static double[][] Raspr(String[] str,double[] find){
         double[][] result=new double[3][2];
         //Матрица средних значений классов
         double[][] mtx1=MatrixClassDis(str);//размерность 3*4
@@ -316,7 +316,7 @@ public class LineRaspr {
      * @return - степень экспоненты
      */
     //----------------------Расчет степени------------------------------------
-    private double step(double[][] inc1, double[][] reversFind, double[][] reversSr,int k){
+    public static double step(double[][] inc1, double[][] reversFind, double[][] reversSr,int k){
         double result=0;
         double[][] proper=new double[4][1];
         for(int i=0;i<4;i++){
@@ -337,7 +337,7 @@ public class LineRaspr {
      * @param b - матрица 2 множитель
      * @return - матрица произведения a на b
      */
-    private double[][] MultiplyMatrix(double[][] a,double[][] b){
+    public static double[][] MultiplyMatrix(double[][] a,double[][] b){
         int m = a.length;
         int n = a[0].length;
         int k = b.length;
@@ -364,7 +364,7 @@ public class LineRaspr {
      * @param a - матрица для транспонирования
      * @return - транспонированная матрица
      */
-    private double[][] MatrixTranspose(double[][] a){
+    public static double[][] MatrixTranspose(double[][] a){
         double[][] transpose=new double[a[0].length][a.length];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
