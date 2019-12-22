@@ -13,7 +13,6 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
-
     /**
      * код ответа
      */
@@ -142,38 +141,58 @@ public class MainActivity extends AppCompatActivity {
             result13.setText(String.valueOf(h[2]));
             if (h[0] > h[1] && h[0] > h[2]) {
                 a = "1";
+                result11.setTextColor(this.getResources().getColor(R.color.colorRed));
             } else if (h[1] > h[0] && h[1] > h[2]) {
                 a = "2";
+                result12.setTextColor(this.getResources().getColor(R.color.colorRed));
             } else if (h[2] > h[1] & h[2] > h[0]) {
                 a = "3";
+                result13.setTextColor(this.getResources().getColor(R.color.colorRed));
             }
             LineRaspr lineRaspr = new LineRaspr();
             String b = "";
             double[][] k = lineRaspr.Raspr(str, find);
-            if (k[0][0] > k[1][0] && k[0][0] > k[2][0] && k[0][1] < k[1][1] && k[0][1] < k[2][1])
-                b = "1";
-            if (k[1][0] > k[0][0] && k[1][0] > k[2][0] && k[1][1] < k[0][1] && k[1][1] < k[2][1])
-                b = "2";
-            if (k[2][0] > k[1][0] && k[2][0] > k[0][0] && k[2][1] < k[1][1] && k[2][1] < k[0][1])
-                b = "3";
             result21.setText(String.valueOf(k[0][0]));
             result22.setText(String.valueOf(k[1][0]));
             result23.setText(String.valueOf(k[2][0]));
             result211.setText(String.valueOf(k[0][1]));
             result222.setText(String.valueOf(k[1][1]));
             result233.setText(String.valueOf(k[2][1]));
+            if (k[0][0] > k[1][0] && k[0][0] > k[2][0] && k[0][1] < k[1][1] && k[0][1] < k[2][1]) {
+                b = "1";
+                result21.setTextColor(this.getResources().getColor(R.color.colorRed));
+                result211.setTextColor(this.getResources().getColor(R.color.colorRed));
+            }
+            if (k[1][0] > k[0][0] && k[1][0] > k[2][0] && k[1][1] < k[0][1] && k[1][1] < k[2][1]) {
+                b = "2";
+                result22.setTextColor(this.getResources().getColor(R.color.colorRed));
+                result222.setTextColor(this.getResources().getColor(R.color.colorRed));
+            }
+            if (k[2][0] > k[1][0] && k[2][0] > k[0][0] && k[2][1] < k[1][1] && k[2][1] < k[0][1]) {
+                b = "3";
+                result23.setTextColor(this.getResources().getColor(R.color.colorRed));
+                result233.setTextColor(this.getResources().getColor(R.color.colorRed));
+            }
             Regression regress = new Regression();
             String j = "";
-            double c = regress.Regre(str, find);
-            result3.setText(String.valueOf(c));
-            if (c < 1.5) {
+            double r = regress.Regre(str, find);
+            double c=Math.ceil(r);
+            String res="";
+            res+=String.valueOf(r);
+            if (c ==1) {
                 j = "1";
+                res+=" 1 Класс";
+                result3.setText(res);
             }
-            if (c > 1.5 && c < 2.5) {
+            if (c == 2) {
                 j = "2";
+                res+=" 2 Класс";
+                result3.setText(res);
             }
-            if (c > 2.5 && c < 3) {
+            if (c == 3) {
                 j = "3";
+                res+=" 3 Класс";
+                result3.setText(res);
             }
             if (Integer.getInteger(a) == Integer.getInteger(b) && Integer.getInteger(a) == Integer.getInteger(j))
                 result.setText(a);
