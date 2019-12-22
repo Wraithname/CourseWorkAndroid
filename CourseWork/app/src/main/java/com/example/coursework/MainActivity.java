@@ -117,66 +117,70 @@ public class MainActivity extends AppCompatActivity {
         TextView fives_column= (TextView)findViewById(R.id.textView11);
         TextView result=(TextView)findViewById(R.id.textView7);
         double[] find=new double[4];
-        find[0]=Double.parseDouble(second_column.getText().toString());
-        find[1]=Double.parseDouble(third_column.getText().toString());
-        find[2]=Double.parseDouble(forth_column.getText().toString());
-        find[3]=Double.parseDouble(fives_column.getText().toString());
-        TextView result11=(TextView)findViewById(R.id.textView20);
-        TextView result12=(TextView)findViewById(R.id.textView17);
-        TextView result13=(TextView)findViewById(R.id.textView18);
-        TextView result21=(TextView)findViewById(R.id.textView16);
-        TextView result22=(TextView)findViewById(R.id.textView25);
-        TextView result23=(TextView)findViewById(R.id.textView29);
-        TextView result211=(TextView)findViewById(R.id.textView22);
-        TextView result222=(TextView)findViewById(R.id.textView27);
-        TextView result233=(TextView)findViewById(R.id.textView31);
-        TextView result3=(TextView)findViewById(R.id.textView34);
-        //Запись начальных данных в файл
-        String[] str=readFile();
-        String a="";
-        Analis analis=new Analis();
-        double[] h=analis.Analisis(str,find);
-        result11.setText(String.valueOf(h[0]));
-        result12.setText(String.valueOf(h[1]));
-        result13.setText(String.valueOf(h[2]));
-        if(h[0]>h[1]&&h[0]>h[2]){
-            a="1";
+        if(second_column.getText().length()!=0&&third_column.getText().length()!=0&&forth_column.getText().length()!=0&&fives_column.getText().length()!=0) {
+            find[0] = Double.parseDouble(second_column.getText().toString());
+            find[1] = Double.parseDouble(third_column.getText().toString());
+            find[2] = Double.parseDouble(forth_column.getText().toString());
+            find[3] = Double.parseDouble(fives_column.getText().toString());
+            TextView result11 = (TextView) findViewById(R.id.textView20);
+            TextView result12 = (TextView) findViewById(R.id.textView17);
+            TextView result13 = (TextView) findViewById(R.id.textView18);
+            TextView result21 = (TextView) findViewById(R.id.textView16);
+            TextView result22 = (TextView) findViewById(R.id.textView25);
+            TextView result23 = (TextView) findViewById(R.id.textView29);
+            TextView result211 = (TextView) findViewById(R.id.textView22);
+            TextView result222 = (TextView) findViewById(R.id.textView27);
+            TextView result233 = (TextView) findViewById(R.id.textView31);
+            TextView result3 = (TextView) findViewById(R.id.textView34);
+            //Запись начальных данных в файл
+            String[] str = readFile();
+            String a = "";
+            Analis analis = new Analis();
+            double[] h = analis.Analisis(str, find);
+            result11.setText(String.valueOf(h[0]));
+            result12.setText(String.valueOf(h[1]));
+            result13.setText(String.valueOf(h[2]));
+            if (h[0] > h[1] && h[0] > h[2]) {
+                a = "1";
+            } else if (h[1] > h[0] && h[1] > h[2]) {
+                a = "2";
+            } else if (h[2] > h[1] & h[2] > h[0]) {
+                a = "3";
+            }
+            LineRaspr lineRaspr = new LineRaspr();
+            String b = "";
+            double[][] k = lineRaspr.Raspr(str, find);
+            if (k[0][0] > k[1][0] && k[0][0] > k[2][0] && k[0][1] < k[1][1] && k[0][1] < k[2][1])
+                b = "1";
+            if (k[1][0] > k[0][0] && k[1][0] > k[2][0] && k[1][1] < k[0][1] && k[1][1] < k[2][1])
+                b = "2";
+            if (k[2][0] > k[1][0] && k[2][0] > k[0][0] && k[2][1] < k[1][1] && k[2][1] < k[0][1])
+                b = "3";
+            result21.setText(String.valueOf(k[0][0]));
+            result22.setText(String.valueOf(k[1][0]));
+            result23.setText(String.valueOf(k[2][0]));
+            result211.setText(String.valueOf(k[0][1]));
+            result222.setText(String.valueOf(k[1][1]));
+            result233.setText(String.valueOf(k[2][1]));
+            Regression regress = new Regression();
+            String j = "";
+            double c = regress.Regre(str, find);
+            result3.setText(String.valueOf(c));
+            if (c < 1.5) {
+                j = "1";
+            }
+            if (c > 1.5 && c < 2.5) {
+                j = "2";
+            }
+            if (c > 2.5 && c < 3) {
+                j = "3";
+            }
+            if (Integer.getInteger(a) == Integer.getInteger(b) && Integer.getInteger(a) == Integer.getInteger(j))
+                result.setText(a);
         }
-        else if(h[1]>h[0]&&h[1]>h[2]){
-            a="2";
+        else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Заполните все характеристики объекта", Toast.LENGTH_SHORT);
+            toast.show();
         }
-        else if(h[2]>h[1]&h[2]>h[0]){
-            a="3";
-        }
-        LineRaspr lineRaspr=new LineRaspr();
-        String b="";
-        double[][] k=lineRaspr.Raspr(str,find);
-        if(k[0][0]>k[1][0]&&k[0][0]>k[2][0]&&k[0][1]<k[1][1]&&k[0][1]<k[2][1])
-            b="1";
-        if(k[1][0]>k[0][0]&&k[1][0]>k[2][0]&&k[1][1]<k[0][1]&&k[1][1]<k[2][1])
-            b="2";
-        if(k[2][0]>k[1][0]&&k[2][0]>k[0][0]&&k[2][1]<k[1][1]&&k[2][1]<k[0][1])
-            b="3";
-        result21.setText(String.valueOf(k[0][0]));
-        result22.setText(String.valueOf(k[1][0]));
-        result23.setText(String.valueOf(k[2][0]));
-        result211.setText(String.valueOf(k[0][1]));
-        result222.setText(String.valueOf(k[1][1]));
-        result233.setText(String.valueOf(k[2][1]));
-        Regression regress=new Regression();
-        String j="";
-        double c=regress.Regre(str,find);
-        result3.setText(String.valueOf(c));
-        if(c<1.5){
-            j="1";
-        }
-        if(c>1.5&&c<2.5){
-            j="2";
-        }
-        if(c>2.5&&c<3){
-            j="3";
-        }
-        if(Integer.getInteger(a)==Integer.getInteger(b)&&Integer.getInteger(a)==Integer.getInteger(j))
-            result.setText(a);
     }
 }
