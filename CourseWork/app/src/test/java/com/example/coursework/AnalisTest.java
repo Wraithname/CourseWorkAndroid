@@ -107,29 +107,29 @@ int n=4;
     }
     @Test
     public void matrixClassDis() {
-        assertArrayEquals(Analis.MatrixClassDis(str),mtxtestdiv);
+        assertArrayEquals(mtxtestdiv,Analis.MatrixClassDis(str));
     }
 
     @Test
     public void matrixB() {
-        assertArrayEquals(Analis.MatrixB(mtxtestInv,mtxtestdiv),mtxtestB);
+        assertArrayEquals(mtxtestB,Analis.MatrixB(mtxtestInv,mtxtestdiv));
     }
 
     @Test
     public void matrixW() {
-        assertArrayEquals(Analis.MatrixW(mtxtestdiv,mtxtest),mtxtestW);
+        assertArrayEquals(mtxtestW,Analis.MatrixW(mtxtestdiv,mtxtest));
     }
 
     @Test
     public void inversion() {
-        assertArrayEquals(Analis.inversion(mtxtestW,n),mtxtestInv);
+        assertArrayEquals(mtxtestInv,Analis.inversion(mtxtestW,n));
     }
 
     @Test
     public void matrixH() {
         double[] h=Analis.MatrixH(mtxtestB,testFind);
-        assertEquals(mtxtestH[0],h[0],0);
-        assertEquals(mtxtestH[1],h[1],0);
-        assertEquals(mtxtestH[2],h[2],0);
+        assertEquals(h[0],mtxtestH[0],0);
+        assertEquals(h[1],mtxtestH[1],0);
+        assertEquals(h[2],mtxtestH[2],0);
     }
 }
