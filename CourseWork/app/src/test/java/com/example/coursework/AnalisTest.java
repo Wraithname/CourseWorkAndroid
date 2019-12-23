@@ -1,9 +1,7 @@
 package com.example.coursework;
-
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 public class AnalisTest {
 String[] str=new String[15];
 double[][] mtxtest=new double[15][4];

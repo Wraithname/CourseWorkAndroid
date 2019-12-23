@@ -1,10 +1,7 @@
 package com.example.coursework;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-
 public class MatrixActionsTest {
     String[] str=new String[15];
     String[] strtest=new String[2];
@@ -167,27 +164,22 @@ public class MatrixActionsTest {
     public void testMatrix() {
         assertArrayEquals(mtxtest1,MatrixActions.TestMatrix(strtest));
     }
-
     @Test
     public void matrixClassDis() {
         assertArrayEquals(mtxtestdiv,MatrixActions.MatrixClassDis(str));
     }
-
     @Test
     public void inversion() {
         assertArrayEquals(mtxtestInv,MatrixActions.inversion(mtxtestW,n));
     }
-
     @Test
     public void multiplyMatrix() {
         assertArrayEquals(mtxtestMulRes,MatrixActions.MultiplyMatrix(mtxtestMul1,mtxtestMul2));
     }
-
     @Test
     public void matrixTranspose() {
         assertArrayEquals(reverstest,MatrixActions.MatrixTranspose(mtxtestMul1));
     }
-
     @Test
     public void determine() {
         assertEquals(det,MatrixActions.Determine(mtxtestC1),0);

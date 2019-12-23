@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      *
      * @param menu - интерфейс меню
-     * @return
+     * @return - возвращает true после отрисовки меню
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

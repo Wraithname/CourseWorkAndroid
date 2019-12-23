@@ -1,10 +1,7 @@
 package com.example.coursework;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-
 public class LineRasprTest {
     String[] str=new String[15];
     double[][] mtxtest=new double[15][4];
@@ -142,22 +139,18 @@ public class LineRasprTest {
     public void matrixC1() {
         assertArrayEquals(mtxtestC1,LineRaspr.MatrixC1(mtxtestdiv,mtxtest));
     }
-
     @Test
     public void matrixC2() {
         assertArrayEquals(mtxtestC2,LineRaspr.MatrixC2(mtxtestdiv,mtxtest));
     }
-
     @Test
     public void matrixC3() {
         assertArrayEquals(mtxtestC3,LineRaspr.MatrixC3(mtxtestdiv,mtxtest));
     }
-
     @Test
     public void squereDet() {
         assertArrayEquals(mtxtestDet,LineRaspr.SquereDet(mtxtestdiv,mtxtest));
     }
-
     @Test
     public void step() {
         assertEquals(stp,LineRaspr.step(mtxtestC1inv,reversFind,reversSrtest,0),0);

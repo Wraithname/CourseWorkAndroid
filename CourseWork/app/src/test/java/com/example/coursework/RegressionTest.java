@@ -1,10 +1,7 @@
 package com.example.coursework;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.Assert.*;
-
 public class RegressionTest {
     String[] str=new String[15];
     double[][] mtxtestO=new double[4][4];
@@ -55,17 +52,14 @@ public class RegressionTest {
         mtxtestX[2][0]=0.19062891096949852;
         mtxtestX[3][0]=-0.005300028050900019;
     }
-
     @Test
     public void matrixO() {
         assertArrayEquals(mtxtestO,Regression.MatrixO(str));
     }
-
     @Test
     public void matrixU() {
         assertArrayEquals(mtxtestU,Regression.MatrixU(str));
     }
-
     @Test
     public void matrixX() {
         assertArrayEquals(mtxtestX,Regression.MatrixX(str));
