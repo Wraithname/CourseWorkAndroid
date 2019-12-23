@@ -163,15 +163,17 @@ public class MainActivity extends AppCompatActivity {
                 result21.setTextColor(this.getResources().getColor(R.color.colorRed));
                 result211.setTextColor(this.getResources().getColor(R.color.colorRed));
             }
-            if ((k[1][0] < k[0][0] && k[1][0] < k[2][0]) || (k[1][1] > k[0][1] && k[1][1] > k[2][1])) {
-                b = "2";
-                result22.setTextColor(this.getResources().getColor(R.color.colorRed));
-                result222.setTextColor(this.getResources().getColor(R.color.colorRed));
-            }
-            if ((k[2][0] < k[1][0] && k[2][0] < k[0][0]) || (k[2][1] > k[1][1] && k[2][1] > k[0][1])) {
-                b = "3";
-                result23.setTextColor(this.getResources().getColor(R.color.colorRed));
-                result233.setTextColor(this.getResources().getColor(R.color.colorRed));
+            else {
+                if ((k[1][0] < k[0][0] && k[1][0] < k[2][0]) || (k[1][1] > k[0][1] && k[1][1] > k[2][1])) {
+                    b = "2";
+                    result22.setTextColor(this.getResources().getColor(R.color.colorRed));
+                    result222.setTextColor(this.getResources().getColor(R.color.colorRed));
+                }else
+                if ((k[2][0] < k[1][0] && k[2][0] < k[0][0]) || (k[2][1] > k[1][1] && k[2][1] > k[0][1])) {
+                    b = "3";
+                    result23.setTextColor(this.getResources().getColor(R.color.colorRed));
+                    result233.setTextColor(this.getResources().getColor(R.color.colorRed));
+                }
             }
             Regression regress = new Regression();
             String j = "";
@@ -183,16 +185,17 @@ public class MainActivity extends AppCompatActivity {
                 j = "1";
                 res+=" (1 Класс)";
                 result3.setText(res);
-            }
-            if (c == 2) {
-                j = "2";
-                res+=" (2 Класс)";
-                result3.setText(res);
-            }
-            if (c == 3) {
-                j = "3";
-                res+=" (3 Класс)";
-                result3.setText(res);
+            }else {
+                if (c == 2) {
+                    j = "2";
+                    res += " (2 Класс)";
+                    result3.setText(res);
+                }else
+                if (c == 3) {
+                    j = "3";
+                    res += " (3 Класс)";
+                    result3.setText(res);
+                }
             }
             if (Integer.getInteger(a) == Integer.getInteger(b) && Integer.getInteger(a) == Integer.getInteger(j))
                 result.setText(a);
