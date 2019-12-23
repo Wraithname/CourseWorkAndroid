@@ -1,8 +1,6 @@
 package com.example.coursework;
 
 public class Analis {
-
-
     /**
      * @param a - инверсированная матрица W
      * @param mtx1 - матрица средних значений классов
