@@ -12,8 +12,8 @@ public class MatrixActions {
      */
     public static double[][] TestMatrix(String[] str){
         String[] line;
-        double[][] mtxtest=new double[15][4];
-        for (int i = 0; i < 15; i++) {
+        double[][] mtxtest=new double[str.length][4];
+        for (int i = 0; i < str.length; i++) {
             line = str[i].split(" ");
             if (Integer.parseInt(line[4]) == 1) {
                 mtxtest[i][0] = Integer.parseInt(line[0]);

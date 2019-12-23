@@ -7,7 +7,9 @@ import static org.junit.Assert.*;
 
 public class MatrixActionsTest {
     String[] str=new String[15];
+    String[] strtest=new String[2];
     double[][] mtxtest=new double[15][4];
+    double[][] mtxtest1=new double[2][4];
     double[][] mtxtestdiv=new double[3][4];
     double[][] mtxtestW=new double[4][4];
     double[][] mtxtestInv=new double[4][4];
@@ -38,6 +40,18 @@ public class MatrixActionsTest {
         str[12]="830 610 18 701 3";
         str[13]="830 350 15 886 3";
         str[14]="780 350 15 886 3";
+
+        strtest[0]="740 570 15 919 1";
+        strtest[1]="740 570 16 907 1";
+
+        mtxtest1[0][0]=740;
+        mtxtest1[0][1]=570;
+        mtxtest1[0][2]=15;
+        mtxtest1[0][3]=919;
+        mtxtest1[1][0]=740;
+        mtxtest1[1][1]=570;
+        mtxtest1[1][2]=16;
+        mtxtest1[1][3]=907;
 
         mtxtest=MatrixActions.TestMatrix(str);
 
@@ -151,6 +165,7 @@ public class MatrixActionsTest {
     }
     @Test
     public void testMatrix() {
+        assertArrayEquals(mtxtest1,MatrixActions.TestMatrix(strtest));
     }
 
     @Test
