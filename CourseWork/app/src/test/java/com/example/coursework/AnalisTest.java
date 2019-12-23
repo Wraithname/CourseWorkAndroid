@@ -124,7 +124,6 @@ int n=4;
     public void inversion() {
         assertArrayEquals(mtxtestInv,Analis.inversion(mtxtestW,n));
     }
-
     @Test
     public void matrixH() {
         double[] h=Analis.MatrixH(mtxtestB,testFind);

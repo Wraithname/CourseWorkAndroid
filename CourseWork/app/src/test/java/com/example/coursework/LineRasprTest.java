@@ -203,11 +203,6 @@ public class LineRasprTest {
         stp=-325.45000000000005;
     }
     @Test
-    public void matrixClassDis() {
-        assertArrayEquals(mtxtestdiv,LineRaspr.MatrixClassDis(str));
-    }
-
-    @Test
     public void matrixC1() {
         assertArrayEquals(mtxtestC1,LineRaspr.MatrixC1(mtxtestdiv,mtxtest));
     }
@@ -230,11 +225,6 @@ public class LineRasprTest {
     @Test
     public void squereDet() {
         assertArrayEquals(mtxtestDet,LineRaspr.SquereDet(mtxtestdiv,mtxtest));
-    }
-
-    @Test
-    public void inversion() {
-        assertArrayEquals(mtxtestC1inv,LineRaspr.inversion(mtxtestC1,n));
     }
 
     @Test
