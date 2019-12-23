@@ -13,7 +13,6 @@ double[][] mtxtestW=new double[4][4];
 double[][] mtxtestInv=new double[4][4];
 double[]mtxtestH=new double[3];
 double[] testFind=new double[4];
-int n=4;
     @Before
     public void init() {
         str[0]="740 570 15 919 1";
@@ -32,7 +31,7 @@ int n=4;
         str[13]="830 350 15 886 3";
         str[14]="780 350 15 886 3";
 
-        mtxtest=Analis.TestMatrix(str);
+        mtxtest=MatrixActions.TestMatrix(str);
         mtxtestdiv[0][0]=732;
         mtxtestdiv[0][1]=572;
         mtxtestdiv[0][2]=15.6;
@@ -106,11 +105,6 @@ int n=4;
         testFind[3]=922.0;
     }
     @Test
-    public void matrixClassDis() {
-        assertArrayEquals(mtxtestdiv,Analis.MatrixClassDis(str));
-    }
-
-    @Test
     public void matrixB() {
         assertArrayEquals(mtxtestB,Analis.MatrixB(mtxtestInv,mtxtestdiv));
     }
@@ -120,10 +114,6 @@ int n=4;
         assertArrayEquals(mtxtestW,Analis.MatrixW(mtxtestdiv,mtxtest));
     }
 
-    @Test
-    public void inversion() {
-        assertArrayEquals(mtxtestInv,Analis.inversion(mtxtestW,n));
-    }
     @Test
     public void matrixH() {
         double[] h=Analis.MatrixH(mtxtestB,testFind);
